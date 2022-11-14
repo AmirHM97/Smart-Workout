@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Start"
+        android:icon="@drawable/ic_baseline_timer_24"
+        android:id="@+id/btn_Start"/>
+
+    <item android:title="Exercise"
+        android:id="@+id/btn_Exercise"
+        android:icon="@drawable/ic_baseline_fitness_center_24"/>
+
+    <item android:title="Nearby"
+        android:id="@+id/btn_Nearby"
+        android:icon="@drawable/ic_baseline_pin_drop_24"
+        />
+</menu>
