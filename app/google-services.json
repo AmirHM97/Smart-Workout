@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "172481277616",
+    "project_id": "smart-workout-5ce7a",
+    "storage_bucket": "smart-workout-5ce7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172481277616:android:ce35c44781baffcf18d575",
+        "android_client_info": {
+          "package_name": "com.example.smartworkout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172481277616-hr0280nntdstut82e2bdricbqtdld65j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBtU-RXuEtW28fv_PrppIaaCwxd0fsd0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "172481277616-hr0280nntdstut82e2bdricbqtdld65j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
