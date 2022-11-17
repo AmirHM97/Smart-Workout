@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.SignInMethodQueryResult;
 
 public class LoginRegisterActivity extends AppCompatActivity {
 
@@ -32,7 +33,39 @@ public class LoginRegisterActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Do something in response to button click
-                CreateUser(email.getText().toString(),pass.getText().toString());
+                String emailText=email.getText().toString();
+                String passText=pass.getText().toString();
+                mAuth.fetchSignInMethodsForEmail(emailText)
+                        .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+
+                        boolean isNewUser = task.getResult().getSignInMethods().isEmpty();
+
+                        if (isNewUser) {
+                            CreateUser(email.getText().toString(),pass.getText().toString());
+                        } else {
+                            mAuth.signInWithEmailAndPassword(emailText, passText)
+                                    .addOnCompleteListener(LoginRegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<AuthResult> task) {
+                                            if (task.isSuccessful()) {
+                                                // Sign in success, update UI with the signed-in user's information
+                                                Log.d(TAG, "signInWithEmail:success");
+                                                Toast.makeText(LoginRegisterActivity.this, "Authentication successful.",
+                                                        Toast.LENGTH_SHORT).show();
+                                                FirebaseUser user = mAuth.getCurrentUser();
+                                            } else {
+                                                // If sign in fails, display a message to the user.
+                                                Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                                Toast.makeText(LoginRegisterActivity.this, "Authentication failed.",
+                                                        Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
+                        }
+                    }
+                });
             }
         });
 
