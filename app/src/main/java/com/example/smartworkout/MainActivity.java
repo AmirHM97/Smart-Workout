@@ -3,6 +3,7 @@ package com.example.smartworkout;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,9 +11,11 @@ import android.widget.Chronometer;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-
+    private FirebaseAuth mAuth;
     BottomNavigationView bottomNavigationView;
     StartFragment startFragment;
     ExerciseFragment exerciseFragment;
@@ -28,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // i=0
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            Intent i= new Intent(this,LoginRegisterActivity.class);
+            startActivity(i);
+       }
 
 
 

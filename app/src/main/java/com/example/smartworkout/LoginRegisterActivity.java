@@ -5,6 +5,7 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -60,6 +61,9 @@ public class LoginRegisterActivity extends AppCompatActivity {
                                                                 Toast.makeText(LoginRegisterActivity.this, "Authentication successful.",
                                                                         Toast.LENGTH_SHORT).show();
                                                                 FirebaseUser user = mAuth.getCurrentUser();
+                                                                Intent i= new Intent(LoginRegisterActivity.this, MainActivity.class);
+                                                                startActivity(i);
+                                                                // Start a new activity
                                                             } else {
                                                                 // If sign in fails, display a message to the user.
                                                                 Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -89,6 +93,8 @@ public class LoginRegisterActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(LoginRegisterActivity.this, "" + user.getIdToken(false),
                                     Toast.LENGTH_SHORT).show();
+                            Intent i= new Intent(LoginRegisterActivity.this, MainActivity.class);
+                            startActivity(i);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
