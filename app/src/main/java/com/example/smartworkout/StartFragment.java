@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.ContextWrapper;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,7 +48,7 @@ public class StartFragment extends Fragment {
 
         email = view.findViewById(R.id.Email);
         name = view.findViewById(R.id.Name);
-        email.setText("Artificial@Pussy.com");
+        email.setText("Artificial@Mussy.com");
         name.setText("Akbar");
 
 
@@ -134,5 +135,9 @@ public class StartFragment extends Fragment {
 
 
         return view;
+    }
+
+    public void kir(){
+
     }
 }

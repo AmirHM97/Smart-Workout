@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SessionFragment"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/session_fragment">
 
     <View
         android:id="@+id/view"
@@ -32,15 +33,15 @@
 
     <Button
         android:id="@+id/buttonStart"
-        android:layout_width="87dp"
-        android:layout_height="48dp"
+        android:layout_width="93dp"
+        android:layout_height="52dp"
         android:text="Start!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.922"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.013" />
 
     <ListView
         android:id="@+id/list_session"
@@ -79,12 +80,12 @@
 
     <Chronometer
         android:id="@+id/chronometer"
-        android:layout_width="89dp"
-        android:layout_height="40dp"
+        android:layout_width="87dp"
+        android:layout_height="38dp"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintHorizontal_bias="0.928"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024" />

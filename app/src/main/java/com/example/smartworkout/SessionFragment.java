@@ -1,13 +1,19 @@
 package com.example.smartworkout;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.os.SystemClock;
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +23,12 @@ import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.google.android.material.timepicker.TimeFormat;
+
+import java.text.DateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 
@@ -31,12 +43,13 @@ public class SessionFragment extends Fragment {
     private Button buttonStart;
     private Button finishedBTN;
     private EditText editWeight;
-    private Button weightUpBTN;
-    private Button weightDownBTN;
-
-
-    ///////////// VARS FOR REPORTS CALCULATION
-    private int [] array_weights;
+    public Chronometer chronometer;
+    public Boolean startOrNot = false;
+    ///////////
+     public ArrayList<Double> Copy_Clac = new ArrayList<Double>();
+     double sum=0;
+    ///////////
+private int selector_For_AlertDialog;
 
 
     public SessionFragment() {
@@ -62,7 +75,6 @@ public class SessionFragment extends Fragment {
 
 
 
-
         listView = (ListView) view.findViewById(R.id.list_session);
         textView= (TextView) view3.findViewById(R.id.textView);
         title= (TextView)  view.findViewById(R.id.Name);
@@ -75,18 +87,21 @@ public class SessionFragment extends Fragment {
                 ax = new int[]{R.drawable.ic_baseline_fitness_center_24, R.drawable.ic_baseline_info_24,
                         R.drawable.ic_baseline_bar_chart_24, R.drawable.ic_baseline_timer_24,R.drawable.ic_baseline_pin_drop_24};
                 title.setText("Arms");
+                this.selector_For_AlertDialog = 1;
                 break;
             case 2:
                 listItem = getResources().getStringArray(R.array.sessionLegs);
                 title.setText("Legs");
                 ax = new int[]{R.drawable.ic_baseline_fitness_center_24, R.drawable.ic_baseline_info_24,
                         R.drawable.ic_baseline_bar_chart_24, R.drawable.ic_baseline_timer_24,R.drawable.ic_baseline_pin_drop_24};
+                this.selector_For_AlertDialog = 2;
                 break;
             case 3:
                 listItem = getResources().getStringArray(R.array.sessionChest);
                 title.setText("Chest");
                 ax = new int[]{R.drawable.ic_baseline_bar_chart_24, R.drawable.ic_baseline_info_24,
                         R.drawable.ic_baseline_bar_chart_24, R.drawable.ic_baseline_timer_24,R.drawable.ic_baseline_pin_drop_24};
+                this.selector_For_AlertDialog = 3;
                 break;
             default:
                 break;
@@ -95,34 +110,31 @@ public class SessionFragment extends Fragment {
 //
 
         CustomBaseAdaptor customBaseAdaptor = new CustomBaseAdaptor(getActivity().getApplicationContext(), listItem, ax );
-        listView.setAdapter(customBaseAdaptor);
 
+        CustomBaseAdaptor_2 customBaseAdaptor_2 = new CustomBaseAdaptor_2(getActivity().getApplicationContext(),listItem,ax);
+        listView.setAdapter(customBaseAdaptor_2);
 
-        // BAKHSHE SET X REPS
-        TextView setsXreps = view2.findViewById(R.id.Num_Rep_TXT);
-
-        // BAKHSHE ADADIE WEIGHT
 
         editWeight = (EditText) view2.findViewById(R.id.editTextWeight);
         editWeight.setVisibility(View.INVISIBLE); // not working
         ArrayList<Float> Weights = new ArrayList<Float>();
 
-        // ezafe kardane adadaye varede be list jahate mohasebat
-        Weights.add(Float.parseFloat(editWeight.getText().toString()));
-
 
         // hala baraye timer
-        Chronometer chronometer;
-        Boolean startOrNot;
+       chronometer = (Chronometer) view.findViewById(R.id.chronometer);
+       chronometer.setBase(SystemClock.elapsedRealtime());
 
 
-
-        buttonStart = (Button) view.findViewById(R.id.buttonStart);
+               buttonStart = (Button) view.findViewById(R.id.buttonStart);
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                listView.setAdapter(customBaseAdaptor);
                 buttonStart.setVisibility(View.INVISIBLE);
+                chronometer.setBase(SystemClock.elapsedRealtime());
+                chronometer.start();
                 finishedBTN.setVisibility(View.VISIBLE);
+
             }
         });
 
@@ -130,15 +142,53 @@ public class SessionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Reports.class);
-                startActivity(intent);
+                Copy_Clac =  customBaseAdaptor.Calc;
+                int i =0;
+                sum = 0;
+
+        for ( i = 0; i < Copy_Clac.size(); i++) {
+            sum += Copy_Clac.get(i);
+          //  System.out.println("majmoo: "+ sum);
+        }
+
+                long time = SystemClock.elapsedRealtime()-chronometer.getBase();
+                chronometer.stop();
+                System.out.println("Nahayatan har Satr: --> "+ Copy_Clac);
+                System.out.println("Zamane tamrin:  "+ time/1000);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("Save Record?");
+                builder.setMessage("Do you want to save this record?\n\n"+ "Workout Duration: "+chronometer.getText() +"\n Scores Acquired: "+ String.format("%.2f", sum));
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        intent.putExtra("ArrayForCalcFromSession", sum);
+                        intent.putExtra("sessionSelector",Session_Selector);
+                        startActivity(intent);
+                    }
+                });
+                builder.setNegativeButton("No, Discard it!", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        startActivity(intent);
+
+                        }
+
+
+                });
+
+                builder.create().show();
             }
         });
-
-
-
 
 
         return view;
     }
 
+
+
 }
+
+

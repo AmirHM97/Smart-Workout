@@ -1,19 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Reports">
+    tools:context=".Reports"
+    android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reports"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/f1"
+        android:layout_width="151dp"
+        android:layout_height="166dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="257dp"
+        android:layout_marginBottom="513dp">
+
+        <ProgressBar
+            android:id="@+id/progressBarArms"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="125dp"
+            android:layout_height="139dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle_shape"
+            android:indeterminate="false"
+            android:progress="0"
+            android:progressDrawable="@drawable/circle_progressbar" />
+
+        <TextView
+            android:id="@+id/textStatus1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="0%"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/f2"
+        android:layout_width="144dp"
+        android:layout_height="166dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="263dp"
+        android:layout_marginBottom="291dp">
+
+        <ProgressBar
+            android:id="@+id/progressBarLegs"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="117dp"
+            android:layout_height="139dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle_shape"
+            android:indeterminate="false"
+            android:progress="0"
+            android:progressDrawable="@drawable/circle_progressbar" />
+
+        <TextView
+            android:id="@+id/textStatus2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="0%"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/f3"
+        android:layout_width="144dp"
+        android:layout_height="166dp"
+        android:layout_alignParentEnd="true"
+
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="263dp"
+        android:layout_marginBottom="53dp">
+
+        <ProgressBar
+            android:id="@+id/progressBarCHEST"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="117dp"
+            android:layout_height="139dp"
+            android:layout_gravity="center"
+            android:background="@drawable/circle_shape"
+            android:indeterminate="false"
+            android:progress="0"
+            android:progressDrawable="@drawable/circle_progressbar" />
+
+        <TextView
+            android:id="@+id/textStatus3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="0%"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imageViewHome"
+        android:layout_width="97dp"
+        android:layout_height="85dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="424dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/home_24" />
+
+</RelativeLayout>

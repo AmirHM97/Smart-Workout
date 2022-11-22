@@ -1,6 +1,7 @@
 package com.example.smartworkout;
 
 import android.content.Context;
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import java.util.ArrayList;
+
 public class CustomBaseAdaptor extends BaseAdapter {
 
 
@@ -18,6 +22,10 @@ public class CustomBaseAdaptor extends BaseAdapter {
     String Exercise_Names[];
     int ax[];
     LayoutInflater inflater;
+    public ArrayList<Float> inp_WEIGHTS = new ArrayList<Float>();
+    public ArrayList<Float> inp_RepXSets = new ArrayList<Float>();
+    public ArrayList<Double> Calc = new ArrayList<Double>();
+    private int i = 0;
 
     public CustomBaseAdaptor (Context kir, String [] tamrin, int [] ax){
         this.context = kir;
@@ -46,15 +54,21 @@ public class CustomBaseAdaptor extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
 
+
+
         convertView = inflater.inflate(R.layout.activity_custom_list_view,null);
         TextView textView1 = convertView.findViewById(R.id.ExerNameTXT);
         ImageView imageView1 = convertView.findViewById(R.id.ExerImage);
+        ImageView imageView2 = convertView.findViewById(R.id.checkImage);
         Button weightUpBTN = convertView.findViewById(R.id.UpBTNWeight);
         Button weightDownBTN = convertView.findViewById(R.id.DownBTNWeight);
         EditText editWeight = convertView.findViewById(R.id.editTextWeight);
-        TextView setsXreps = convertView.findViewById(R.id.Num_Rep_TXT);
-
-        //
+        EditText setsXreps = convertView.findViewById(R.id.Num_Rep_TXT);
+        if (setsXreps == null) {
+            
+        }
+        
+        
             weightUpBTN.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -65,6 +79,8 @@ public class CustomBaseAdaptor extends BaseAdapter {
         weightDownBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                  //  inp_WEIGHTS.add(editWeight.getText());
                 float input_weight_ui = (float) (Float.parseFloat(editWeight.getText().toString()) - 0.5);
                 if (input_weight_ui < 0) {
                     editWeight.setText("0.0");
@@ -77,9 +93,24 @@ public class CustomBaseAdaptor extends BaseAdapter {
         //
         textView1.setText(Exercise_Names[position]);
         imageView1.setImageResource(ax[position]);
+        imageView2.setImageResource(R.drawable.checkkhan);
+
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+               inp_RepXSets.add(Float.parseFloat(setsXreps.getText().toString()));
+               inp_WEIGHTS.add(Float.parseFloat(editWeight.getText().toString()));
+               System.out.println("BAH BAH INJARO--> setRep: "+inp_RepXSets + "Weight: "+inp_WEIGHTS);
+               Calc.add(Math.sqrt(inp_RepXSets.get(i) * Math.pow(inp_WEIGHTS.get(i),2)));
+                i++; // finished clicked --> i=0 again
+                imageView2.setVisibility(View.INVISIBLE);
+            }
+        });
+
+
         return convertView;
-
-
 
 
     }

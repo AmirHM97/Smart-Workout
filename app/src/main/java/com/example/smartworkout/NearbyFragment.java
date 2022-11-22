@@ -3,13 +3,17 @@ package com.example.smartworkout;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 
-public class NearbyFragment extends Fragment {
+public class NearbyFragment extends Fragment{
 
 
     public NearbyFragment() {
