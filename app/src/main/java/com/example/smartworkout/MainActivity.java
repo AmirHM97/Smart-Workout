@@ -1,8 +1,5 @@
 package com.example.smartworkout;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -21,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     StartFragment startFragment;
     ExerciseFragment exerciseFragment;
-    NearbyFragment nearbyFragment;
     MapsFragment mapsFragment;
     SessionFragment sessionFragment;
     Chronometer chronometer;
@@ -51,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         Button logout= findViewById(R.id.logout_btn);
         startFragment = new StartFragment();
         exerciseFragment = new ExerciseFragment();
-        nearbyFragment = new NearbyFragment();
         mapsFragment = (MapsFragment) new MapsFragment();
         logout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -18,8 +18,12 @@
     <string name="arm">Arms Session</string>
     <string name="leg">Legs Session</string>
     <string name="chest">Chest Session</string>
+<<<<<<< HEAD
     <string name="cover">cover</string>
     <string name="name">Name</string>
+=======
+    <string name="total_points_acquired">Total Points Acquired</string>
+>>>>>>> 61c3b491c78b13962f28f42e330f505f9ffa7ee3
 
     <string-array name="sessionArms">
         <item>Ex1 </item>
