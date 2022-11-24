@@ -19,6 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.SignInMethodQueryResult;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class LoginRegisterActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -30,6 +31,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
         Button btn = findViewById(R.id.login_btn);
         EditText email = findViewById(R.id.email_editText);
         EditText pass = findViewById(R.id.password_editText);
+        EditText nameEditText = findViewById(R.id.name_editText);
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Do something in response to button click
@@ -49,7 +51,8 @@ public class LoginRegisterActivity extends AppCompatActivity {
                                         boolean isNewUser = task.getResult().getSignInMethods().isEmpty();
 
                                         if (isNewUser) {
-                                            CreateUser(email.getText().toString(), pass.getText().toString());
+
+                                            CreateUser(email.getText().toString(), pass.getText().toString(),nameEditText.getText().toString());
                                         } else {
                                             mAuth.signInWithEmailAndPassword(emailText, passText)
                                                     .addOnCompleteListener(LoginRegisterActivity.this, new OnCompleteListener<AuthResult>() {
@@ -82,7 +85,9 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
     }
 
-    private void CreateUser(String email, String pass) {
+    private void CreateUser(String email, String pass, String name) {
+
+
         mAuth.createUserWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -91,7 +96,21 @@ public class LoginRegisterActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(LoginRegisterActivity.this, "" + user.getIdToken(false),
+
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(name)
+                                    .build();
+
+                            user.updateProfile(profileUpdates)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                Log.d(TAG, "User profile updated.");
+                                            }
+                                        }
+                                    });
+                            Toast.makeText(LoginRegisterActivity.this, "Registration Successful!!" ,
                                     Toast.LENGTH_SHORT).show();
                             Intent i= new Intent(LoginRegisterActivity.this, MainActivity.class);
                             startActivity(i);

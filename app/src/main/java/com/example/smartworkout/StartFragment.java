@@ -21,6 +21,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 
 public class StartFragment extends Fragment {
 
@@ -34,7 +37,7 @@ public class StartFragment extends Fragment {
     private ImageButton imageInfo2;
     private ImageButton imageInfo3;
     private FragmentTransaction fragmentTransaction;
-
+    private FirebaseAuth mAuth;
 
 
 
@@ -44,12 +47,13 @@ public class StartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_start, container, false);
-
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         email = view.findViewById(R.id.Email);
         name = view.findViewById(R.id.Name);
-        email.setText("Artificial@Mussy.com");
-        name.setText("Akbar");
+        email.setText(user.getEmail());
+        name.setText(user.getDisplayName());
 
 
         cardView1 = view.findViewById(R.id.Card_Session_Arms);

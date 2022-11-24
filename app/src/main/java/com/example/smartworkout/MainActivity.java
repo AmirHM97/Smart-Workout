@@ -7,7 +7,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -38,14 +40,27 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
        }
 
+        if (user != null) {
+
+            Toast.makeText(MainActivity.this, user.getEmail(),
+                    Toast.LENGTH_SHORT).show();
+        }
 
 
 
+        Button logout= findViewById(R.id.logout_btn);
         startFragment = new StartFragment();
         exerciseFragment = new ExerciseFragment();
         nearbyFragment = new NearbyFragment();
         mapsFragment = (MapsFragment) new MapsFragment();
-
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent i= new Intent(MainActivity.this,LoginRegisterActivity.class);
+                startActivity(i);
+            }
+        });
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 //        getSupportFragmentManager().beginTransaction()
 //                .replace(R.id.fragmentContainerView_Main,exerciseFragment).commit();
