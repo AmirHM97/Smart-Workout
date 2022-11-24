@@ -10,7 +10,8 @@
     app:cardCornerRadius="15dp"
     android:layout_margin="10dp"
     android:clickable="true"
-    app:cardElevation="7dp">
+    app:cardElevation="7dp"
+    android:id="@+id/exercise_cv">
 
     <LinearLayout
         android:layout_width="187dp"
