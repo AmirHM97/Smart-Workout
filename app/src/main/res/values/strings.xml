@@ -17,6 +17,7 @@
     <string name="arm">Arms Session</string>
     <string name="leg">Legs Session</string>
     <string name="chest">Chest Session</string>
+    <string name="total_points_acquired">Total Points Acquired</string>
 
     <string-array name="sessionArms">
         <item>Ex1 </item>

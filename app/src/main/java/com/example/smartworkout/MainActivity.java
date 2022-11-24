@@ -1,13 +1,12 @@
 package com.example.smartworkout;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Chronometer;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -19,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     StartFragment startFragment;
     ExerciseFragment exerciseFragment;
-    NearbyFragment nearbyFragment;
     MapsFragment mapsFragment;
     SessionFragment sessionFragment;
     Chronometer chronometer;
@@ -43,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
         startFragment = new StartFragment();
         exerciseFragment = new ExerciseFragment();
-        nearbyFragment = new NearbyFragment();
         mapsFragment = (MapsFragment) new MapsFragment();
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);

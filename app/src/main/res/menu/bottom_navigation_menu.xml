@@ -9,7 +9,7 @@
         android:id="@+id/btn_Exercise"
         android:icon="@drawable/ic_baseline_fitness_center_24"/>
 
-    <item android:title="Nearby"
+    <item android:title="Find Us"
         android:id="@+id/btn_Nearby"
         android:icon="@drawable/ic_baseline_pin_drop_24"
         />

@@ -1,7 +1,6 @@
 package com.example.smartworkout;
 
 import android.content.Context;
-import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import java.util.ArrayList;
 
@@ -104,7 +102,7 @@ public class CustomBaseAdaptor extends BaseAdapter {
                inp_WEIGHTS.add(Float.parseFloat(editWeight.getText().toString()));
                System.out.println("BAH BAH INJARO--> setRep: "+inp_RepXSets + "Weight: "+inp_WEIGHTS);
                Calc.add(Math.sqrt(inp_RepXSets.get(i) * Math.pow(inp_WEIGHTS.get(i),2)));
-                i++; // finished clicked --> i=0 again
+               i++; // finished clicked --> i=0 again
                 imageView2.setVisibility(View.INVISIBLE);
             }
         });
