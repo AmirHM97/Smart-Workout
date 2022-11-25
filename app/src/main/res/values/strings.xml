@@ -26,31 +26,31 @@
 
 
     <string-array name="sessionArms">
-        <item>Ex1 </item>
-        <item>Computer Engineering1</item>
-        <item>Electrical Engineering</item>
-        <item>Mechanical Engineering</item>
-        <item>Civil Engineering</item>
+        <item>Bicep Curl</item>
+        <item>Preacher Curl</item>
+        <item>Triceps Extension</item>
+        <item>Dip Machine</item>
+
 
     </string-array>
 
 
     <string-array name="sessionLegs">
-        <item>Ex1 </item>
-        <item>Computer Engineering2</item>
-        <item>Electrical Engineering</item>
-        <item>Mechanical Engineering</item>
-        <item>Civil Engineering</item>
+        <item>Leg Extension</item>
+        <item>Leg Press</item>
+        <item>Dead lift</item>
+        <item>Leg Curl</item>
+
 
     </string-array>
 
 
     <string-array name="sessionChest">
-        <item>Ex1 </item>
-        <item>Computer Engineering3</item>
-        <item>Electrical Engineering</item>
-        <item>Mechanical Engineering</item>
-        <item>Civil Engineering</item>
+        <item>Bench press </item>
+        <item>Incline Bench press</item>
+        <item>Decline Bench press</item>
+        <item>Chest Fly</item>
+
 
     </string-array>
 
