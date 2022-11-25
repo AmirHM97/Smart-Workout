@@ -48,10 +48,11 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
                     String passText = pass.getText().toString();
 
-                    Toast.makeText(LoginRegisterActivity.this, ""+emailText+" "+ validate(emailText),
-                            Toast.LENGTH_SHORT).show();
+
                     if (!validate(emailText)){
-                        email.setError("email is not in a correct format");
+                        email.setError(emailText+" is not in a correct format");
+                        Toast.makeText(LoginRegisterActivity.this, ""+emailText+"  is not in a correct format",
+                                Toast.LENGTH_SHORT).show();
                     } else{
                         if (passText.equals("")) {
                             pass.setError("password can not be empty");
