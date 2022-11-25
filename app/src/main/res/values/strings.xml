@@ -23,6 +23,10 @@
     <string name="name">Name</string>
 
     <string name="total_points_acquired">Total Points Acquired</string>
+    <string name="arms_session"><u><b><i>Arms Session</i></b></u></string>
+    <string name="legs_session"><u><b><i>legs Session</i></b></u></string>
+    <string name="chest_session"><u><b><i>Chest Session</i></b></u></string>
+    <string name="welcome_to_smart_workout"><u><b><i>Welcome to smart workout!</i></b></u></string>
 
 
     <string-array name="sessionArms">

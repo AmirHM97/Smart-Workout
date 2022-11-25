@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@color/sefidkasif"
     tools:context=".StartFragment"
     android:id="@+id/Fragment_Start">
 
@@ -12,13 +12,13 @@
         android:id="@+id/view"
         android:layout_width="292dp"
         android:layout_height="4dp"
-        android:background="#E91E63"
+        android:background="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.116" />
+        app:layout_constraintVertical_bias="0.167" />
 
     <ImageView
         android:id="@+id/imageButton_Stat"
@@ -28,17 +28,17 @@
         android:src="@drawable/ic_baseline_bar_chart_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintHorizontal_bias="0.956"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.495"
+        app:layout_constraintVertical_bias="0.032"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Hoodad"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,72 +51,74 @@
         android:id="@+id/Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="hfarhad@uoguelph.ca"
+        android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.097" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/Card_Session_Arms"
-        android:layout_width="409dp"
-        android:layout_height="50dp"
+        android:layout_width="366dp"
+        android:layout_height="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.233">
+        app:layout_constraintVertical_bias="0.29000002">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="366dp"
+            android:layout_height="98dp">
 
             <ImageView
                 android:id="@+id/imageArms"
-                android:layout_width="55dp"
-                android:layout_height="match_parent"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="354dp"
-                android:layout_marginBottom="0dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="315dp"
+                android:layout_marginBottom="45dp"
                 android:src="@mipmap/arrrms" />
 
             <TextView
                 android:id="@+id/textArms"
-                android:layout_width="134dp"
+                android:layout_width="146dp"
                 android:layout_height="24dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="70dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="205dp"
-                android:layout_marginBottom="13dp"
-                android:text="Arms Session"
-                android:textSize="19dp"
-                android:textStyle="italic"
-                android:textColor="@color/black"/>
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="140dp"
+                android:layout_marginBottom="49dp"
+                android:text="@string/arms_session"
+
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imageInfo1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="29dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="354dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="31dp"
-                android:layout_marginBottom="13dp"
+                android:layout_marginStart="315dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="26dp"
+                android:layout_marginBottom="47dp"
                 android:src="@drawable/ic_baseline_info_24" />
 
 
@@ -126,53 +128,59 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/Card_Session_Legs"
-        android:layout_width="409dp"
-        android:layout_height="50dp"
+        android:layout_width="365dp"
+        android:layout_height="63dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="391dp"
+            android:layout_height="79dp">
 
             <ImageView
                 android:id="@+id/imageLegs"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
+                android:layout_width="57dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="21dp"
                 android:src="@mipmap/legs" />
 
             <TextView
                 android:id="@+id/textLegs"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
+                android:layout_width="113dp"
+                android:layout_height="20dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="72dp"
-                android:layout_marginEnd="225dp"
-                android:text="Legs Session"
-                android:layout_marginTop="13dp"
-                android:layout_marginBottom="13dp"
-                android:textSize="19dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="198dp"
+                android:layout_marginBottom="38dp"
+                android:text="@string/legs_session"
                 android:textColor="@color/black"
+                android:textSize="15dp"
                 android:textStyle="italic" />
 
             <ImageButton
                 android:id="@+id/imageinfo2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="48dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="354dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="31dp"
-                android:layout_marginBottom="13dp"
+                android:layout_marginStart="313dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="#FEFEFE"
                 android:src="@drawable/ic_baseline_info_24" />
 
 
@@ -181,58 +189,67 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/Card_Session_Chest"
-        android:layout_width="409dp"
-        android:layout_height="50dp"
+        android:layout_width="364dp"
+        android:layout_height="71dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.63">
+        app:layout_constraintVertical_bias="0.71000004">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="410dp"
+            android:layout_height="131dp">
 
             <ImageView
                 android:id="@+id/imageChest"
-                android:layout_width="55dp"
-                android:layout_height="match_parent"
+                android:layout_width="43dp"
+                android:layout_height="74dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="57dp"
                 android:src="@mipmap/chest" />
 
             <TextView
                 android:id="@+id/textChest"
-                android:layout_width="156dp"
-                android:layout_height="24dp"
+                android:layout_width="96dp"
+                android:layout_height="29dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="70dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="183dp"
-                android:layout_marginBottom="13dp"
-                android:text="Chest Session"
+                android:layout_marginStart="78dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="225dp"
+                android:layout_marginBottom="49dp"
+                android:text="@string/chest_session"
                 android:textColor="@color/black"
-                android:textSize="19dp"
+                android:textSize="15dp"
                 android:textStyle="italic" />
 
             <ImageButton
                 android:id="@+id/imageinfo3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="32dp"
+                android:layout_height="58dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="354dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="31dp"
-                android:layout_marginBottom="13dp"
+                android:layout_marginStart="311dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="67dp"
+                android:layout_marginBottom="68dp"
+                android:backgroundTint="#FEFEFE"
                 android:src="@drawable/ic_baseline_info_24" />
+
         </RelativeLayout>
 
 
     </androidx.cardview.widget.CardView>
+
     <Button
         android:id="@+id/logout_btn"
         android:layout_width="wrap_content"

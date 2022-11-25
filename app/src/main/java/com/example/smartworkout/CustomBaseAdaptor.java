@@ -52,8 +52,6 @@ public class CustomBaseAdaptor extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
 
-
-
         convertView = inflater.inflate(R.layout.activity_custom_list_view,null);
         TextView textView1 = convertView.findViewById(R.id.ExerNameTXT);
         ImageView imageView1 = convertView.findViewById(R.id.ExerImage);

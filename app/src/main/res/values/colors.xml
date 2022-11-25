@@ -6,5 +6,12 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FBC818</color>
+    <color name="red1">#FF0000</color>
+    <color name="red2">#E83639</color>
+    <color name="blackGuelph">#363435</color>
+    <color name="white">#FBC818</color>
+    <color name="sefidkasif">#CAC7BD</color>
+    <color name="green">#52FF09</color>
+
 </resources>

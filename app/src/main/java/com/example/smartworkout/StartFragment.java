@@ -108,7 +108,7 @@ public class StartFragment extends Fragment {
         imageInfo1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog alertDialogKhan = new AlertDialog.Builder(getActivity()).setTitle("Arms Session Info").setMessage("This...")
+                AlertDialog alertDialogKhan = new AlertDialog.Builder(getActivity()).setTitle("Arms Session Info").setMessage("This session will approximately take 45 minutes, including 4 exercises.")
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -121,7 +121,7 @@ public class StartFragment extends Fragment {
         imageInfo2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog alertDialogKhan = new AlertDialog.Builder(getActivity()).setTitle("Legs Session Info").setMessage("This...")
+                AlertDialog alertDialogKhan = new AlertDialog.Builder(getActivity()).setTitle("Legs Session Info").setMessage("This session will approximately take 40 minutes, including 4 exercises.")
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -134,7 +134,7 @@ public class StartFragment extends Fragment {
         imageInfo3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog alertDialogKhan = new AlertDialog.Builder(getActivity()).setTitle("Chest Session Info").setMessage("This...")
+                AlertDialog alertDialogKhan = new AlertDialog.Builder(getActivity()).setTitle("Chest Session Info").setMessage("This session will approximately take 38 minutes, including 4 exercises.")
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

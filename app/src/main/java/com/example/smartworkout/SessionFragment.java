@@ -13,7 +13,6 @@ import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -91,9 +90,9 @@ public class SessionFragment extends Fragment {
             sum = savedInstanceState.getDouble("Sum_Points");
             eyvalla = savedInstanceState.getString("Time");
           //  String[] Min_Sec = buffer.split(":");
-          //  System.out.println(Min_Sec +" KIR");
+
           //  offset = (long) ((Double.parseDouble(Min_Sec[0]) * 60) + Double.parseDouble(Min_Sec[1]));
-          //  System.out.println("offset: Kir --> "+ offset);
+
       // chronometer.setBase( SystemClock.elapsedRealtime() - offset);  //chronometer.setText
             offset = savedInstanceState.getLong("offset2");
 
@@ -157,7 +156,7 @@ System.out.println("mano negah kon: " + dialogIs_On);
             diaaalog();
 
             chronometer.stop();
-            Toast.makeText(getActivity(), "umad jati ke bayad biad", Toast.LENGTH_SHORT).show();
+       //     Toast.makeText(getActivity(), "umad jati ke bayad biad", Toast.LENGTH_SHORT).show();
             started = false;
             buttonStart.setVisibility(View.INVISIBLE);
             chronometer.setText(eyvalla);
@@ -174,6 +173,9 @@ System.out.println("mano negah kon: " + dialogIs_On);
 
         CustomBaseAdaptor_2 customBaseAdaptor_2 = new CustomBaseAdaptor_2(getActivity().getApplicationContext(),listItem,ax);
 
+
+
+
         if (started == false){
         listView.setAdapter(customBaseAdaptor_2);
         }
@@ -183,7 +185,7 @@ System.out.println("mano negah kon: " + dialogIs_On);
        //     System.out.println("Umade: "+bufferWeight);
             buttonStart.setVisibility(View.INVISIBLE);
             chronometer.setBase(SystemClock.elapsedRealtime() - offset);
-       //     System.out.println("OFFSET ke KIRKOS"+ offset);
+
             chronometer.start();
             finishedBTN.setVisibility(View.VISIBLE);
 
@@ -235,7 +237,7 @@ System.out.println("mano negah kon: " + dialogIs_On);
 
             if (savedInstanceState == null){
                 buffer = chronometer.getText().toString();
-                System.out.println("kiriBuf "+ buffer);
+
             } else {
                 buffer = savedInstanceState.getString("Buf");
             }

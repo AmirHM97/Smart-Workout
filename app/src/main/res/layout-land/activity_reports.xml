@@ -20,13 +20,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.304">
+        app:layout_constraintVertical_bias="0.934">
 
         <ProgressBar
             android:id="@+id/progressBarArms"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="117dp"
-            android:layout_height="139dp"
+            android:layout_width="126dp"
+            android:layout_height="131dp"
             android:layout_gravity="center"
             android:background="@drawable/circle_shape"
             android:indeterminate="false"
@@ -44,7 +44,6 @@
 
     </FrameLayout>
 
-
     <FrameLayout
         android:id="@+id/f2"
         android:layout_width="144dp"
@@ -54,16 +53,16 @@
         android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.892"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.304">
+        app:layout_constraintVertical_bias="0.934">
 
         <ProgressBar
             android:id="@+id/progressBarLegs"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="117dp"
-            android:layout_height="144dp"
+            android:layout_width="123dp"
+            android:layout_height="145dp"
             android:layout_gravity="center"
             android:background="@drawable/circle_shape"
             android:indeterminate="false"
@@ -92,16 +91,16 @@
         android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.304">
+        app:layout_constraintVertical_bias="0.934">
 
         <ProgressBar
             android:id="@+id/progressBarCHEST"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="117dp"
-            android:layout_height="139dp"
+            android:layout_width="126dp"
+            android:layout_height="138dp"
             android:layout_gravity="center"
             android:background="@drawable/circle_shape"
             android:indeterminate="false"
@@ -129,29 +128,11 @@
         android:layout_weight="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintHorizontal_bias="0.861"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027"
+        app:layout_constraintVertical_bias="0.142"
         app:srcCompat="@drawable/home_24" />
-
-    <View
-        android:id="@+id/view1"
-        android:layout_width="335dp"
-        android:layout_height="3dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="341dp"
-        android:background="#E91E63"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
     <View
         android:id="@+id/view4"
@@ -166,62 +147,10 @@
         android:background="#E91E63"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="3dp"
-        android:layout_height="200dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="86dp"
-        android:layout_marginEnd="322dp"
-        android:layout_marginBottom="37dp"
-        android:background="#E91E63"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.991" />
-
-    <TextView
-        android:id="@+id/points"
-        android:layout_width="wrap_content"
-        android:layout_height="46dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="60dp"
-        android:text="@string/total_points_acquired"
-        android:textSize="30sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="104dp"
-        android:layout_height="29dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:text="Pts / 1M"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.656" />
+        app:layout_constraintVertical_bias="0.261" />
 
     <TextView
         android:id="@+id/textView6"
@@ -235,27 +164,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.761" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="31dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:text="Legs"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.838" />
+        app:layout_constraintVertical_bias="0.225" />
 
     <TextView
         android:id="@+id/textView8"
@@ -271,21 +183,21 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.476" />
 
     <TextView
-        android:id="@+id/arms_table"
+        android:id="@+id/chest_table"
         android:layout_width="wrap_content"
         android:layout_height="31dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="120dp"
         android:text="0"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/view2"
@@ -299,43 +211,78 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="72dp"
         android:text="0"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/view2"
         app:layout_constraintTop_toBottomOf="@+id/view4" />
 
     <TextView
-        android:id="@+id/chest_table"
+        android:id="@+id/arms_table"
         android:layout_width="wrap_content"
         android:layout_height="31dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="24dp"
         android:text="0"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/view2"
         app:layout_constraintTop_toBottomOf="@+id/view4" />
 
     <TextView
-        android:id="@+id/summary"
-        android:layout_width="301dp"
-        android:layout_height="129dp"
+        android:id="@+id/textView5"
+        android:layout_width="104dp"
+        android:layout_height="29dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="32dp"
-        android:text="Report Summary"
-        android:textSize="45sp"
-        android:textStyle="italic"
+        android:text="Pts / 1M"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="3dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="86dp"
+        android:layout_marginEnd="322dp"
+        android:layout_marginBottom="37dp"
+        android:background="#E91E63"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.137" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="Legs"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.342" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

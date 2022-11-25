@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/session_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SessionFragment"
     android:background="@color/sefidkasif"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/session_fragment">
+    tools:context=".SessionFragment">
 
     <View
         android:id="@+id/view"
@@ -15,10 +15,11 @@
         android:background="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.116" />
+        app:layout_constraintVertical_bias="0.14" />
+
     <TextView
         android:id="@+id/Name"
         android:layout_width="wrap_content"
@@ -46,14 +47,14 @@
 
     <ListView
         android:id="@+id/list_session"
-        android:layout_width="413dp"
-        android:layout_height="304dp"
+        android:layout_width="405dp"
+        android:layout_height="186dp"
         android:layout_marginTop="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="0.213" />
+        app:layout_constraintVertical_bias="0.302" />
 
     <TextView
         android:id="@+id/RepSet"
@@ -62,10 +63,10 @@
         android:text="Reps X Sets"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.351"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.186" />
 
     <TextView
         android:id="@+id/Weight"
@@ -74,10 +75,10 @@
         android:text="Weight (lb)"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintHorizontal_bias="0.755"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.186" />
 
     <Chronometer
         android:id="@+id/chronometer"
@@ -98,8 +99,9 @@
         android:text="Finished"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list_session"
-        app:layout_constraintVertical_bias="0.281" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.168" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
