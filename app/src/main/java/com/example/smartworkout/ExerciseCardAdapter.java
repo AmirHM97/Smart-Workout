@@ -40,6 +40,9 @@ public class ExerciseCardAdapter extends RecyclerView.Adapter<CardViewHolder> {
             public void onClick(View view) {
                 Intent i= new Intent(context,ExerciseDetailActivity.class);
                 i.putExtra("Id",Exercises.get(p).Id);
+                i.putExtra("Name",Exercises.get(p).Name);
+                i.putExtra("Cover",Exercises.get(p).Cover);
+                i.putExtra("Description",Exercises.get(p).Description);
                 context.startActivity(i);
             }
         });

@@ -35,8 +35,8 @@ public class LoginRegisterActivity extends AppCompatActivity {
         EditText email = findViewById(R.id.email_editText);
         EditText pass = findViewById(R.id.password_editText);
         EditText nameEditText = findViewById(R.id.name_editText);
-        String regex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})$";
-        Pattern pattern = Pattern.compile(regex);
+//        String regex = "^(.+)@(\\\\S+)$";
+//        Pattern pattern = Pattern.compile(regex);
 
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -44,59 +44,68 @@ public class LoginRegisterActivity extends AppCompatActivity {
                 String emailText = email.getText().toString();
                 if (emailText.equals("")) {
                     email.setError("email can not be empty");
-
-
                 } else {
+
                     String passText = pass.getText().toString();
-                    Matcher matcher = pattern.matcher(emailText);
-                    if (!matcher.matches()){
+
+                    Toast.makeText(LoginRegisterActivity.this, ""+emailText+" "+ validate(emailText),
+                            Toast.LENGTH_SHORT).show();
+                    if (!validate(emailText)){
                         email.setError("email is not in a correct format");
-                    }
-                    if (passText.equals("")) {
-                        pass.setError("password can not be empty");
-                    } else {
-                        mAuth.fetchSignInMethodsForEmail(emailText)
-                                .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                    } else{
+                        if (passText.equals("")) {
+                            pass.setError("password can not be empty");
+                        } else {
+                            mAuth.fetchSignInMethodsForEmail(emailText)
+                                    .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
 
-                                        boolean isNewUser = task.getResult().getSignInMethods().isEmpty();
+                                            boolean isNewUser = task.getResult().getSignInMethods().isEmpty();
 
-                                        if (isNewUser) {
+                                            if (isNewUser) {
 
-                                            CreateUser(email.getText().toString(), pass.getText().toString(),nameEditText.getText().toString());
-                                        } else {
-                                            mAuth.signInWithEmailAndPassword(emailText, passText)
-                                                    .addOnCompleteListener(LoginRegisterActivity.this, new OnCompleteListener<AuthResult>() {
-                                                        @Override
-                                                        public void onComplete(@NonNull Task<AuthResult> task) {
-                                                            if (task.isSuccessful()) {
-                                                                // Sign in success, update UI with the signed-in user's information
-                                                                Log.d(TAG, "signInWithEmail:success");
-                                                                Toast.makeText(LoginRegisterActivity.this, "Authentication successful.",
-                                                                        Toast.LENGTH_SHORT).show();
-                                                                FirebaseUser user = mAuth.getCurrentUser();
-                                                                Intent i= new Intent(LoginRegisterActivity.this, MainActivity.class);
-                                                                startActivity(i);
-                                                                // Start a new activity
-                                                            } else {
-                                                                // If sign in fails, display a message to the user.
-                                                                Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                                                Toast.makeText(LoginRegisterActivity.this, "Authentication failed.",
-                                                                        Toast.LENGTH_SHORT).show();
+                                                CreateUser(email.getText().toString(), pass.getText().toString(),nameEditText.getText().toString());
+                                            } else {
+                                                mAuth.signInWithEmailAndPassword(emailText, passText)
+                                                        .addOnCompleteListener(LoginRegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                                                if (task.isSuccessful()) {
+                                                                    // Sign in success, update UI with the signed-in user's information
+                                                                    Log.d(TAG, "signInWithEmail:success");
+                                                                    Toast.makeText(LoginRegisterActivity.this, "Authentication successful.",
+                                                                            Toast.LENGTH_SHORT).show();
+                                                                    FirebaseUser user = mAuth.getCurrentUser();
+                                                                    Intent i= new Intent(LoginRegisterActivity.this, MainActivity.class);
+                                                                    startActivity(i);
+                                                                    // Start a new activity
+                                                                } else {
+                                                                    // If sign in fails, display a message to the user.
+                                                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                                                    Toast.makeText(LoginRegisterActivity.this, "Authentication failed.",
+                                                                            Toast.LENGTH_SHORT).show();
+                                                                }
                                                             }
-                                                        }
-                                                    });
+                                                        });
+                                            }
                                         }
-                                    }
-                                });
+                                    });
+                        }
                     }
+
                 }
             }
         });
 
     }
+    public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
+            Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
+    public static boolean validate(String emailStr) {
+        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);
+        return matcher.find();
+    }
     private void CreateUser(String email, String pass, String name) {
 
 
