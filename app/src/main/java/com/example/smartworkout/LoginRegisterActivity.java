@@ -21,6 +21,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.SignInMethodQueryResult;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class LoginRegisterActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     @Override
@@ -32,14 +35,23 @@ public class LoginRegisterActivity extends AppCompatActivity {
         EditText email = findViewById(R.id.email_editText);
         EditText pass = findViewById(R.id.password_editText);
         EditText nameEditText = findViewById(R.id.name_editText);
+        String regex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})$";
+        Pattern pattern = Pattern.compile(regex);
+
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Do something in response to button click
                 String emailText = email.getText().toString();
                 if (emailText.equals("")) {
                     email.setError("email can not be empty");
+
+
                 } else {
                     String passText = pass.getText().toString();
+                    Matcher matcher = pattern.matcher(emailText);
+                    if (!matcher.matches()){
+                        email.setError("email is not in a correct format");
+                    }
                     if (passText.equals("")) {
                         pass.setError("password can not be empty");
                     } else {

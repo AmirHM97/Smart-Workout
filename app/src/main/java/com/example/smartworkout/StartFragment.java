@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -44,13 +45,26 @@ public class StartFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_start, container, false);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
         email = view.findViewById(R.id.Email);
         name = view.findViewById(R.id.Name);
-        email.setText(user.getEmail());
-        name.setText(user.getDisplayName());
+        try {
+            email.setText(user.getEmail());
+            name.setText(user.getDisplayName());
+        }catch (Exception e){
+//            Intent i=new Intent(getActivity(),LoginRegisterActivity.class);
+//            startActivity(i);
+        }
 
 
+        Button logout= view.findViewById(R.id.logout_btn);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent i= new Intent(getActivity(),LoginRegisterActivity.class);
+                startActivity(i);
+            }
+        });
         cardView1 = view.findViewById(R.id.Card_Session_Arms);
         cardView1.setOnClickListener(new View.OnClickListener() {
             @Override

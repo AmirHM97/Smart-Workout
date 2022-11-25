@@ -38,26 +38,26 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
        }
 
-        if (user != null) {
+//        if (user != null) {
+//
+//            Toast.makeText(MainActivity.this, user.getEmail(),
+//                    Toast.LENGTH_SHORT).show();
+//        }
 
-            Toast.makeText(MainActivity.this, user.getEmail(),
-                    Toast.LENGTH_SHORT).show();
-        }
 
 
-
-        Button logout= findViewById(R.id.logout_btn);
+//        Button logout= findViewById(R.id.logout_btn);
         startFragment = new StartFragment();
         exerciseFragment = new ExerciseFragment();
         mapsFragment = (MapsFragment) new MapsFragment();
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Intent i= new Intent(MainActivity.this,LoginRegisterActivity.class);
-                startActivity(i);
-            }
-        });
+//        logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                FirebaseAuth.getInstance().signOut();
+//                Intent i= new Intent(MainActivity.this,LoginRegisterActivity.class);
+//                startActivity(i);
+//            }
+//        });
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 //        getSupportFragmentManager().beginTransaction()
 //                .replace(R.id.fragmentContainerView_Main,exerciseFragment).commit();
